@@ -21,7 +21,7 @@ As requested by the problem statement, all deliverables are included in the root
 1.  **Codebase (25%):** The complete Python application is located in the `app/` directory and executed via `main.py`.
 2.  **3-Page Solution Document (10%):** See `solution_document.md` for a concise explanation of the architecture, design choices, and tradeoffs.
 3.  **System Architecture Diagram:** See `architecture_diagram.md` for the Mermaid flowchart depicting the MAS topology and data flow.
-4.  **Research Log (30%):** See `research/04_ChronoMesh_Deep_Research.md` for the audit of MAS literature, temporal memory, and dataset schemas.
+4.  **Research Log (30%):** See `RESEARCH_LOG.md` for the exhaustive audit of MAS literature, temporal memory, and dataset schemas that heavily influenced this architecture.
 
 ---
 
