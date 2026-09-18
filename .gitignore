@@ -1,0 +1,23 @@
+# Environments
+venv/
+env/
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Databases
+*.sqlite
+*.db
+c360_mesh.db
+langgraph_checkpoints.db
+
+# Output and logs
+*.log
+scenario_03_output.json
+
+# Dataset (Ignore the huge extracted dataset folder)
+dataset_extracted/

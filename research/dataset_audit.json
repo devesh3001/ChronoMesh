@@ -1,0 +1,156 @@
+{
+  "archive_sha256": "86e1ba0e7611b2901e11b7746475ff623324a63a1a99f5b3101a013428dfb322",
+  "scenarios": [
+    {
+      "directory": "scenario_01",
+      "label_scenario_id": "scenario_05_major_medical_event",
+      "checkpoints": 3,
+      "streams": {
+        "history_seed": {
+          "rows": 375,
+          "types": {
+            "purchase": 221,
+            "login": 142,
+            "deposit": 9,
+            "standing_instruction": 3
+          },
+          "first_event_time": "2025-10-01T08:01:00Z",
+          "last_event_time": "2026-01-31T19:23:00Z",
+          "duplicate_ids_within_file": 0,
+          "event_time_order_inversions": 0,
+          "ingestion_time_order_inversions": 0,
+          "customer_mismatches": 0,
+          "account_mismatches": 0,
+          "late_events": []
+        },
+        "live_stream": {
+          "rows": 116,
+          "types": {
+            "purchase": 58,
+            "login": 46,
+            "outbound_transfer": 1,
+            "withdrawal": 2,
+            "deposit": 4,
+            "refund": 1,
+            "standing_instruction": 2,
+            "search_query": 1,
+            "ticket_created": 1
+          },
+          "first_event_time": "2026-02-01T08:02:00Z",
+          "last_event_time": "2026-04-15T21:31:00Z",
+          "duplicate_ids_within_file": 0,
+          "event_time_order_inversions": 0,
+          "ingestion_time_order_inversions": 1,
+          "customer_mismatches": 0,
+          "account_mismatches": 0,
+          "late_events": [
+            {
+              "event_id": "EVT_000420",
+              "delay_seconds": 172800.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "directory": "scenario_02",
+      "label_scenario_id": "scenario_06_new_child",
+      "checkpoints": 2,
+      "streams": {
+        "history_seed": {
+          "rows": 296,
+          "types": {
+            "login": 70,
+            "purchase": 214,
+            "deposit": 9,
+            "standing_instruction": 3
+          },
+          "first_event_time": "2025-10-01T15:05:00Z",
+          "last_event_time": "2026-01-31T16:58:00Z",
+          "duplicate_ids_within_file": 0,
+          "event_time_order_inversions": 0,
+          "ingestion_time_order_inversions": 0,
+          "customer_mismatches": 0,
+          "account_mismatches": 0,
+          "late_events": []
+        },
+        "live_stream": {
+          "rows": 110,
+          "types": {
+            "purchase": 72,
+            "login": 27,
+            "deposit": 5,
+            "ticket_resolved": 1,
+            "standing_instruction": 3,
+            "search_query": 1,
+            "dependents_change": 1
+          },
+          "first_event_time": "2026-02-01T19:17:00Z",
+          "last_event_time": "2026-04-15T21:47:00Z",
+          "duplicate_ids_within_file": 0,
+          "event_time_order_inversions": 0,
+          "ingestion_time_order_inversions": 0,
+          "customer_mismatches": 0,
+          "account_mismatches": 0,
+          "late_events": [
+            {
+              "event_id": "EVT_000341",
+              "delay_seconds": 86400.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "directory": "scenario_03",
+      "label_scenario_id": "scenario_07_churn_risk",
+      "checkpoints": 3,
+      "streams": {
+        "history_seed": {
+          "rows": 399,
+          "types": {
+            "purchase": 267,
+            "login": 57,
+            "session_duration": 57,
+            "deposit": 9,
+            "standing_instruction": 9
+          },
+          "first_event_time": "2025-10-01T13:09:00Z",
+          "last_event_time": "2026-01-31T12:56:00Z",
+          "duplicate_ids_within_file": 0,
+          "event_time_order_inversions": 0,
+          "ingestion_time_order_inversions": 0,
+          "customer_mismatches": 0,
+          "account_mismatches": 0,
+          "late_events": []
+        },
+        "live_stream": {
+          "rows": 72,
+          "types": {
+            "purchase": 51,
+            "login": 3,
+            "session_duration": 3,
+            "ticket_created": 1,
+            "deposit": 6,
+            "ticket_resolved": 1,
+            "standing_instruction": 3,
+            "feature_used": 1,
+            "outbound_transfer": 3
+          },
+          "first_event_time": "2026-02-01T13:49:00Z",
+          "last_event_time": "2026-04-03T09:15:00Z",
+          "duplicate_ids_within_file": 0,
+          "event_time_order_inversions": 0,
+          "ingestion_time_order_inversions": 0,
+          "customer_mismatches": 0,
+          "account_mismatches": 0,
+          "late_events": []
+        }
+      }
+    }
+  ],
+  "total_rows": 1368,
+  "duplicate_id_occurrences_across_all_files": 877,
+  "duplicate_id_occurrences_across_live_files": 103,
+  "scope_note": "Practice labels were inspected for requirements analysis. They must never be available to inference workers."
+}

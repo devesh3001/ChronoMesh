@@ -1,0 +1,45 @@
+
+PAGE 1
+C360-Mesh | Mid-Term Submission
+Inter IIT Tech Meet 15.0 Prepathon | Natural Language Processing
+C360-Mesh: Temporal, Evidence-Grounded Agentic 
+Customer 360
+One-Page Findings and Proposed Approach
+Problem framing. The goal is not another passive Customer-360 dashboard or a prompt-driven chatbot. The 
+system must continuously ingest asynchronous customer signals, maintain evolving per-customer context, and 
+commit to a bounded intervention or explicit NO_ACTION, while preserving explainability, traceability, 
+deterministic guardrails and real human approval for risky actions.
+Proposed system
+C360-Mesh uses a state-centric hybrid multi-agent design. Incoming usage, support, transaction and KYC events are 
+normalized through a schema adapter with event-time, ingestion-time, deduplication and late-event handling. Specialized 
+processors then convert raw signals into typed Evidence Contracts containing a claim, confidence, evidence IDs, 
+timestamps and validity. Agents publish these structured conclusions to a shared Customer State Board rather than 
+exchanging unrestricted natural-language reasoning.
+Memory and temporal reasoning. The board is backed by working memory, per-customer episodic memory and shared 
+semantic/policy memory. A Temporal Truth Maintenance layer keeps valid-from/valid-until intervals and supersession 
+links, so a late event can revise the current state without erasing what the system believed earlier. A cross-signal Life-Event 
+Agent maintains persistent hypotheses such as relocation or home purchase with evidence and confidence.
+Adaptive coordination and decisioning. A Synthesis Agent builds the current customer narrative from structured 
+evidence and relevant memory. Debate is not the default: a verifier/debate path is activated only when agents materially 
+disagree or confidence is low. The system generates a bounded action set (including NO_ACTION), then scores candidates 
+using expected benefit, action cost, eligibility/policy risk and uncertainty. This separates semantic reasoning from 
+deterministic business constraints and creates a falsifiable final decision.
+Safety and explainability. Before high-impact actions, an evidence-ablation stability check removes the strongest 
+supporting signal and recomputes the action; fragile decisions are escalated. Risk/ambiguity then routes the flow to 
+controlled autonomy, HITL approval/modify/reject, or a hard-stop specialist queue. Every event, retrieval, tool call, finding, 
+decision and human override is recorded in one audit trace.
+Why this architecture
+Multi-agent control Research on MAS failures motivates typed handoffs, scoped state 
+and explicit verification instead of free-form agent chat.
+Streaming correctness Event time and lateness concepts make the architecture robust to 
+asynchronous and out-of-order streams.
+Memory freshness Temporal memory retains evolving facts and historical 
+relationships rather than relying on static vector retrieval alone.
+Action quality Utility/uplift thinking asks whether an intervention is useful and 
+cost-effective, not merely whether churn risk is high.
+Implementation direction: Python + FastAPI; lightweight stream/event-log layer; PostgreSQL + pgvector for structured 
+and semantic memory; LangGraph-style persisted workflow/HITL; deterministic/ML specialist processors; minimal 
+dashboard; replay-based evaluation harness.
+Research anchors: Cemri et al., “Why Do Multi-Agent LLM Systems Fail?” (2025); Rasmussen et al., “Zep: A Temporal Knowledge Graph 
+Architecture for Agent Memory” (2025); Apache Flink event-time/watermark documentation; Moraes et al., “Uplift Modeling: from Causal 
+Inference to Personalization” (2023); LangGraph interrupt/persistence documentation.
